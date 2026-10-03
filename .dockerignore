@@ -1,0 +1,9 @@
+node_modules
+.tools
+data
+release
+test
+test-results
+.git
+.env
+*.log

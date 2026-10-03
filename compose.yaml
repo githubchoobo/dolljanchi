@@ -1,0 +1,24 @@
+services:
+  party:
+    build: .
+    restart: unless-stopped
+    user: "0:0"
+    entrypoint:
+      - /bin/sh
+      - -ec
+      - |
+        chown -R node:node /app/data
+        chmod -R u+rwX /app/data
+        echo 'Baby volume permissions repaired by Compose' >&2
+        if command -v su-exec >/dev/null 2>&1; then
+          exec su-exec node:node node server.mjs
+        fi
+        exec su -s /bin/sh node -c 'node server.mjs'
+    ports:
+      - "3000:3000"
+    environment:
+      PUBLIC_URL: ${PUBLIC_URL:-}
+    volumes:
+      - party-data:/app/data
+volumes:
+  party-data:
