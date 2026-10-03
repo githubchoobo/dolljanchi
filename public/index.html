@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7ef"><meta name="description" content="아이의 첫 생일, 가족과 함께하는 두근두근 돌잡이 게임">
+  <title>아이의 첫 번째 생일 · 두근두근 돌잡이</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/dialog.css">
+  <link rel="stylesheet" href="/yard.css">
+  <link rel="stylesheet" href="/race-effects.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <dialog id="reset-dialog" aria-labelledby="reset-title" aria-describedby="reset-description">
+    <form id="reset-form">
+      <h2 id="reset-title">행사를 새로 시작할까요?</h2>
+      <p id="reset-description">모든 투표와 우승 결과가 삭제되고 투표가 다시 열립니다.<br>등록한 얼굴 사진과 관리자 설정은 유지됩니다.</p>
+      <label for="reset-confirmation" class="field-label">확인을 위해 아래 칸에 <b>새로 시작</b>을 입력해주세요.</label>
+      <input id="reset-confirmation" placeholder="새로 시작" autocomplete="off" required>
+      <p id="reset-error" role="alert"></p>
+      <div class="button-row">
+        <button type="button" class="button secondary" id="reset-cancel">취소</button>
+        <button type="submit" class="button danger" id="reset-submit" disabled>초기화하고 투표 열기</button>
+      </div>
+    </form>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

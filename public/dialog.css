@@ -1,0 +1,8 @@
+#reset-dialog{width:min(460px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;border:1px solid var(--line);border-radius:17px;padding:28px;background:var(--white);color:var(--ink);box-shadow:0 20px 80px #233b3630}
+#reset-dialog::backdrop{background:#24382d66;backdrop-filter:blur(3px)}
+#reset-title{font-size:21px;font-weight:600;letter-spacing:-.7px}
+#reset-description{font-size:12px;line-height:1.9;color:#78866c;margin:17px 0 23px;word-break:keep-all}
+#reset-dialog .field-label{font-size:12px;line-height:1.8}
+#reset-error{font-size:12px;line-height:1.7;color:#a26b58;margin:10px 0;min-height:20px}
+#reset-dialog .button-row{justify-content:flex-end;gap:10px;margin-top:18px;flex-wrap:wrap}
+@media(max-width:480px){#reset-dialog{padding:24px 20px}#reset-title{font-size:19px}#reset-dialog .button{font-size:11px;padding:12px}}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMin slice">
+ <defs>
+  <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#e9f1e3"/><stop offset="1" stop-color="#f5f2df"/></linearGradient>
+  <linearGradient id="ground" x2="0" y2="1"><stop stop-color="#eee5cb"/><stop offset="1" stop-color="#e5dac0"/></linearGradient>
+  <pattern id="gravel" width="93" height="77" patternUnits="userSpaceOnUse"><circle cx="14" cy="17" r="1.2" fill="#b9ab87" opacity=".22"/><ellipse cx="61" cy="51" rx="2.3" ry="1.1" fill="#c5b794" opacity=".2"/></pattern>
+ </defs>
+ <path fill="url(#sky)" d="M0 0h1600v1000H0z"/>
+ <g fill="#fffdf0" opacity=".7"><ellipse cx="355" cy="60" rx="84" ry="20"/><ellipse cx="319" cy="48" rx="36" ry="23"/><ellipse cx="1280" cy="85" rx="100" ry="20"/><ellipse cx="1310" cy="68" rx="45" ry="28"/></g>
+ <path d="M0 200Q210 55 430 197Q650 80 850 190Q1150 72 1420 182L1600 132V370H0z" fill="#c7d3b0"/>
+ <path d="M0 266Q320 125 666 248Q1050 113 1600 252V440H0z" fill="#b2c497"/>
+ <path d="M0 261Q780 332 1600 257V1000H0z" fill="url(#ground)"/>
+ <path d="M0 261Q780 332 1600 257" fill="none" stroke="#c5b99a" stroke-width="7"/>
+ <g fill="none" stroke="#bba883" stroke-width="9" stroke-linecap="round" opacity=".7"><path d="M0 230q790 75 1600 0M0 257q790 75 1600 0"/><path d="M20 209v74m70-69v73m70-66v73m70-66v73m70-68v73m70-67v73m70-68v73m70-68v73m70-70v73m70-70v73m70-72v73m70-73v73m70-73v73m70-75v73m70-75v73m70-76v73m70-77v73m70-78v73m70-80v73m70-80v73m70-81v73m70-82v73m70-83v73"/></g>
+ <path fill="url(#gravel)" d="M0 300h1600v700H0z"/>
+ <g stroke="#9fa578" stroke-width="3" fill="none" opacity=".65"><path d="m36 415 3-17 6 17 4-13m1495 152 3-17 6 17 4-13M102 862l3-17 6 17 4-13m1360 41 3-17 6 17 4-13m-84-546 3-17 6 17 4-13"/></g>
+ <g fill="#a6b785"><ellipse cx="15" cy="277" rx="58" ry="23"/><ellipse cx="1590" cy="283" rx="69" ry="25"/><ellipse cx="11" cy="1000" rx="122" ry="28"/><ellipse cx="1590" cy="1000" rx="108" ry="32"/></g>
+ <g fill="#c4ad86" opacity=".55"><ellipse cx="63" cy="646" rx="7" ry="3"/><ellipse cx="1540" cy="827" rx="9" ry="4"/><ellipse cx="1290" cy="972" rx="6" ry="3"/><ellipse cx="223" cy="945" rx="7" ry="3"/></g>
+</svg>

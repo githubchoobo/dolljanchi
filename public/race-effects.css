@@ -1,0 +1,56 @@
+/* Independent limbs make a running stick figure; the original face stays intact. */
+.runner.running .character,.runner.running .char-body{animation:none!important}
+.runner.running .char-pose{animation:runner-bounce .28s ease-in-out infinite}
+.runner .leg-left,.runner .leg-right{transform-origin:25px 29px}
+.runner.running .leg-left{animation:runner-leg .32s ease-in-out infinite alternate}
+.runner.running .leg-right{animation:runner-leg .32s ease-in-out infinite alternate-reverse}
+.runner.running .arm-left{animation:runner-arm .32s ease-in-out infinite alternate-reverse}
+.runner.running .arm-right{animation:runner-arm .32s ease-in-out infinite alternate}
+.runner .char-head{rotate:0deg;animation:none}
+.runner .char-body{overflow:visible}
+.runner[data-race-action="throw"] .arm-right{animation:runner-throw .4s ease-in-out infinite!important}
+.runner[data-race-action="trip-attack"] .leg-right{animation:none;transform:rotate(-75deg)}
+.runner[data-race-action="fallen"] .char-pose,.runner[data-race-action="bombed"] .char-pose{animation:none!important;transform:translateY(4px) rotate(var(--fall-angle));transform-origin:50% 75%}
+.runner[data-race-action="fallen"] .leg-left,.runner[data-race-action="fallen"] .leg-right,.runner[data-race-action="bombed"] .leg-left,.runner[data-race-action="bombed"] .leg-right{animation:none;transform:rotate(-15deg)}
+.runner[data-race-action="trapped"] .leg-left,.runner[data-race-action="trapped"] .leg-right{animation-duration:1s}
+.runner[data-race-action="trapped"] .char-pose{animation-duration:.85s}
+.race-effects-layer{position:absolute;inset:0;pointer-events:none;z-index:30;overflow:hidden}
+.race-projectile{position:absolute;left:0;top:0;width:43px;height:43px;filter:drop-shadow(0 4px 2px #57411f30);will-change:transform}
+.race-projectile[hidden]{display:none}.race-projectile svg{height:100%;width:100%}.projectile-trip{width:60px}
+.runner-net,.runner-stars,.runner-impact{position:absolute;pointer-events:none;display:none;z-index:15}
+.runner-net{inset:-6px -16px 4px;rotate:-7deg}.runner-net svg{width:100%;height:100%}
+.runner-stars{top:-16px;left:-17px;width:70px;color:#c49632;white-space:nowrap;font-size:17px;animation:dizzy-stars .7s ease-in-out infinite alternate}
+.runner-impact{width:88px;height:88px;left:50%;top:40%;transform:translate(-50%,-50%);opacity:var(--impact-opacity)}
+.runner[data-race-action="trapped"] .runner-net,.runner[data-race-action="fallen"] .runner-stars,.runner[data-race-action="bombed"] .runner-stars,.runner[data-race-action="bombed"] .runner-impact{display:block}
+.runner .char-name{position:relative;z-index:20}
+.yard-page .race-shell .runner .character{scale:1;width:54px}
+.yard-page .race-shell .runner .char-head{width:43px;height:43px}
+.yard-page .race-shell .runner .char-body{width:37px;height:36px;margin-top:-4px}
+.yard-page .race-shell .runner .char-name{font-size:10px}
+.yard-page .race-shell .runner .char-eyes{font-size:15px;left:9px;top:12px;letter-spacing:3px}
+.yard-page .race-shell .runner .char-smile{left:16px;top:28px;width:8px}
+.yard-page .race-shell .racetrack.dense .runner .char-head{width:30px;height:30px}
+.yard-page .race-shell .racetrack.dense .runner .char-body{width:29px;height:25px}
+.yard-page .race-shell .racetrack.dense .runner .char-name{font-size:8px}
+.yard-page .race-shell .racetrack.dense .runner .char-eyes{font-size:11px;left:6px;top:8px;letter-spacing:2px}
+.yard-page .race-shell .racetrack.dense .runner .char-smile{left:10px;top:18px;width:6px}
+@keyframes runner-leg{from{transform:rotate(-43deg)}to{transform:rotate(43deg)}}
+@keyframes runner-arm{from{transform:rotate(-57deg)}to{transform:rotate(57deg)}}
+@keyframes runner-throw{0%{transform:rotate(-135deg)}100%{transform:rotate(-45deg)}}
+@keyframes runner-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes dizzy-stars{from{transform:translateX(-3px) rotate(-7deg)}to{transform:translateX(3px) rotate(7deg)}}
+.yard-queue [data-activity="jump"] .char-pose{animation:yard-jump 1.25s ease-in-out infinite;animation-delay:var(--play-delay)}
+.yard-queue [data-activity="jump"] .arm-left{transform:rotate(100deg)}
+.yard-queue [data-activity="jump"] .arm-right{transform:rotate(-100deg)}
+.yard-queue [data-activity="dance"] .char-pose{animation:yard-dance 1.1s ease-in-out infinite;animation-delay:var(--play-delay)}
+.yard-queue [data-activity="dance"] .arm-left{animation:runner-arm .55s ease-in-out infinite alternate}
+.yard-queue [data-activity="dance"] .arm-right{animation:runner-arm .55s ease-in-out infinite alternate-reverse}
+.yard-queue [data-activity="dance"] .leg-left{transform-origin:25px 29px;animation:runner-leg .55s ease-in-out infinite alternate}
+.yard-queue [data-activity="dance"] .leg-right{transform-origin:25px 29px;animation:runner-leg .55s ease-in-out infinite alternate-reverse}
+@keyframes yard-jump{0%,100%{transform:translateY(0) scaleY(1)}18%{transform:translateY(3px) scaleY(.95)}48%{transform:translateY(-24px) scaleY(1.03)}75%{transform:translateY(0) scaleY(.96)}}
+@keyframes yard-dance{0%,100%{transform:translateX(-5px) rotate(-7deg)}25%{transform:translateY(-5px)}50%{transform:translateX(5px) rotate(7deg)}75%{transform:translateY(-5px)}}
+@media(max-width:600px){.yard-page .race-shell .race-lane{min-height:92px}.yard-page .race-shell .racetrack.dense .race-lane{min-height:65px}.race-projectile{width:32px;height:32px}.projectile-trip{width:42px}.runner-impact{width:64px;height:64px}}
+@media(prefers-reduced-motion:reduce){.runner .char-pose,.runner .leg-left,.runner .leg-right,.runner .arm-left,.runner .arm-right,.runner-stars,.yard-queue [data-activity="jump"] .char-pose,.yard-queue [data-activity="dance"] .char-pose{animation:none!important}}
+.character .char-head.cutout-face{background:none;border-color:transparent;border-radius:0;overflow:visible;box-shadow:none}
+.character .char-head.cutout-face img{object-fit:contain;width:100%;height:100%;filter:drop-shadow(0 2px 1px #685b2920)}
+.baby-real-face{filter:drop-shadow(0 2px 1px #685b2915)}
